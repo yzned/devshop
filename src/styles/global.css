@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --font-golos: "Golos Text", "sans-serif";
+  --color-main-white: #DCD2E2
+}
+
+
+.text-fluid {
+  @apply text-[76px];
+  font-size: clamp(24px, 8vw, 76px); /* min, dynamic, max */
+}
+
+/* Убираем CSS-анимацию, управляем через JS */
+#scrolling-text {
+  display: flex;
+  width: max-content;
+  transform: translateX(0);
+  transition: none; /* отключаем переходы, будем управлять вручную */
+}
+
+/* Опционально: можно добавить плавность, но лучше управлять через JS */
+.scrolling-container {
+  overflow: hidden;
+}
+ 
+@layer theme {
+  @font-face {
+    font-family: "golos";
+    src:
+      url("/fonts/golos/GolosText-Regular.ttf") format("truetype");
+    font-weight: 400;
+    /* Regular */
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "golos";
+    src:
+      url("/fonts/golos/GolosText-Medium.ttf") format("truetype");
+    font-weight: 500;
+    /* Medium */
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "golos";
+    src:
+      url("/fonts/golos/GolosText-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    /* SemiBold */
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "golos";
+    src:
+      url("/fonts/golos/GolosText-Bold.ttf") format("truetype");
+    font-weight: 700;
+    /* Bold */
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "golos";
+    src:
+      url("/fonts/golos/GolosText-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    /* ExtraBold */
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "golos";
+    src:
+      url("/fonts/golos/GolosText-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+

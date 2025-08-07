@@ -1,0 +1,60 @@
+---
+const { label } = Astro.props;
+---
+
+<div class="card-container rounded-full overflow-hidden">
+    <div
+        class="rounded-full px-[2vw] py-[0.8vw] text-white font-medium whitespace-nowrap text-[1vw] relative"
+    >
+        {label}
+    </div>
+
+    <svg style="display: none; overflow: hidden;">
+        <filter
+            id="displacementFilter"
+            x="-50%"
+            y="-50%"
+            width="200%"
+            height="200%"
+        >
+            <feTurbulence
+                type="turbulence"
+                baseFrequency="0.01"
+                numOctaves="2"
+                result="turbulence"></feTurbulence>
+
+            <feDisplacementMap
+                in="SourceGraphic"
+                in2="turbulence"
+                scale="25"
+                xChannelSelector="R"
+                yChannelSelector="G"
+                result="distorted"></feDisplacementMap>
+        </filter>
+    </svg>
+</div>
+
+<style scoped>
+    .card-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .card-container > div {
+        position: relative;
+        z-index: 1;
+        -webkit-backdrop-filter: url(#displacementFilter);
+        backdrop-filter: url(#displacementFilter);
+    }
+
+    .card-container::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        border-radius: 9999px;
+        pointer-events: none;
+        background: rgba(0, 0, 0, 0.7); /* Темный фон */
+        filter: blur(5px); /* Размытие для мягкого эффекта */
+    }
+</style>
