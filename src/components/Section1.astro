@@ -14,17 +14,19 @@ const items = [
 ---
 
 <div class="w-full relative overflow-hidden bg-black">
+    <!-- Анимированный верхний текст -->
     <p
-        class="absolute z-50 text-[1.1vw] text-white opacity-40 w-full text-center top-[6%]"
+        class="opacity-40 absolute z-50 text-[1.1vw] text-white w-full text-center top-[6%]"
     >
         null.face
     </p>
+
     <div class="relative w-full">
         <img src="/src/assets/person-header.png" class="w-full relative z-0" />
 
         <div
-            class="absolute left-0 right-0 top-1/4 -translate-y-1/2
-                   flex-nowrap overflow-hidden inline-flex z-10"
+            class="fade-in absolute left-0 right-0 top-1/4 -translate-y-1/2
+               flex-nowrap overflow-hidden inline-flex z-10"
         >
             <div id="scrolling-text" class="flex">
                 <p
@@ -44,7 +46,7 @@ const items = [
 
         <img
             src="/src/assets/person-without-bg.png"
-            class="w-full absolute z-20 -top-[30.5%] -left-[2.4%] -rotate-[4deg]"
+            class="w-full absolute z-20 -top-[30.5%] -left-[2.4%] -rotate-[4.7deg] fade-in-without-move"
         />
     </div>
 
@@ -71,7 +73,7 @@ const items = [
     </section>
 
     <div
-        class="absolute z-50 text-[1vw] text-[#6E677D] opacity-40 w-full text-center bottom-[4%]"
+        class="fade-in absolute z-50 text-[1vw] text-[#6E677D] opacity-40 w-full text-center bottom-[4%]"
     >
         <p>
             A senior dev team with 6+ years <br />of experience in crypto, Web3,
@@ -102,6 +104,27 @@ const items = [
 </style>
 
 <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                rootMargin: "0px 0px -100px 0px",
+            },
+        );
+
+        document
+            .querySelectorAll(".fade-in, .scale-in , .fade-in-without-move")
+            .forEach((el) => observer.observe(el));
+    });
+
     document.addEventListener("DOMContentLoaded", () => {
         const scrollingText = document.getElementById("scrolling-text");
         const scrollingCards = document.getElementById("scrolling-cards");

@@ -6,24 +6,30 @@
 }
 
 
-.text-fluid {
-  @apply text-[76px];
-  font-size: clamp(24px, 8vw, 76px); /* min, dynamic, max */
+
+.fade-in-without-move {
+  opacity: 0;
+  transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
 }
 
-/* Убираем CSS-анимацию, управляем через JS */
-#scrolling-text {
-  display: flex;
-  width: max-content;
-  transform: translateX(0);
-  transition: none; /* отключаем переходы, будем управлять вручную */
+.fade-in-without-move.visible {
+  opacity: 1;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
 }
 
-/* Опционально: можно добавить плавность, но лучше управлять через JS */
-.scrolling-container {
-  overflow: hidden;
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
- 
+
 @layer theme {
   @font-face {
     font-family: "golos";
