@@ -17,6 +17,7 @@
 .fade-in-without-move.visible {
   opacity: 1;
 }
+
 .fade-in {
   opacity: 0;
   transform: translateY(-10px);

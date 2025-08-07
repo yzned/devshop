@@ -1,0 +1,77 @@
+---
+import Separator from "./Separator.astro";
+---
+
+<div class="w-screen pt-[10%] flex flex-col">
+    <Separator />
+    <div class="px-[1%] h-[40vw] w-[70vw] pt-[5%] pb-[8%] flex space-x-[16vw]">
+        <div class="h-full flex flex-col justify-between fade-in">
+            <p class="uppercase text-[2vw] text-[#DCD2E2]">superpowers</p>
+
+            <p class="text-[1vw] text-[#6E677D]">
+                We don’t follow the market. <br />We fix it for 6 years
+            </p>
+        </div>
+
+        <div class="flex items-end space-x-[6vw] fade-in">
+            <div class="text-[1vw] text-[#6E677D] space-y-[0.7vw]">
+                {
+                    [
+                        "Product design",
+                        " UX research",
+                        " Web3 UX",
+                        " 3D design",
+                        "Frontend (React/Next)",
+                        " Backend APIs",
+                        " Smart contracts",
+                        "Wallet integration",
+                        " DevOps",
+                        " CI/CD pipelines",
+                    ].map((item) => <div>{item}</div>)
+                }
+            </div>
+
+            <div class="text-[1vw] text-[#6E677D] space-y-[0.7vw]">
+                {
+                    [
+                        " Web3 protocols",
+                        "Token utilities",
+                        "DAO logic",
+                        "AI integration",
+                        "Dashboard systems",
+                        "API architecture",
+                        "System scaling",
+                        "Performance tuning",
+                        "QA & testing",
+                        "Design-to-code",
+                    ].map((item) => <div>{item}</div>)
+                }
+            </div>
+        </div>
+    </div>
+
+    <Separator />
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 1,
+                rootMargin: "0px 0px 0px 0px",
+            },
+        );
+
+        document
+            .querySelectorAll(".fade-in, .scale-in , .fade-in-without-move")
+            .forEach((el) => observer.observe(el));
+    });
+</script>

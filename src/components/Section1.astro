@@ -14,7 +14,6 @@ const items = [
 ---
 
 <div class="w-full relative overflow-hidden bg-black">
-    <!-- Анимированный верхний текст -->
     <p
         class="opacity-40 absolute z-50 text-[1.1vw] text-white w-full text-center top-[6%]"
     >
@@ -121,7 +120,7 @@ const items = [
         );
 
         document
-            .querySelectorAll(".fade-in, .scale-in , .fade-in-without-move")
+            .querySelectorAll(".fade-in, .fade-in-without-move")
             .forEach((el) => observer.observe(el));
     });
 
