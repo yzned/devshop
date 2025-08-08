@@ -31,6 +31,22 @@
   transform: translateY(0);
 }
 
+
+h1 {
+  font-size: 140px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.gradients h1 {
+  background: linear-gradient(30deg, #9ed8db 40%, #007b82 70%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+
+
 @layer theme {
   @font-face {
     font-family: "golos";
