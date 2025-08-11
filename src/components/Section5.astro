@@ -1,0 +1,51 @@
+<div class="py-[20vw] justify-center px-[2vw] flex flex-col gap-[10vw]">
+    <p class="uppercase text-[3vw] text-[#DCD2E2]">how we work</p>
+    <div class="flex gap-[1vw]">
+        {
+            [
+                {
+                    name: "Project based",
+                    desc: (
+                        <span>
+                            Clear scope. Fixed price.
+                            <br /> Fast delivery.
+                        </span>
+                    ),
+                },
+                {
+                    name: "Subscription",
+                    desc: (
+                        <span>
+                            Full-stack delivery. <br />
+                            Flexible workload. Always aligned.
+                        </span>
+                    ),
+                },
+                {
+                    name: "Post launch support",
+                    desc: (
+                        <span>
+                            Bugfixes. Maintenance. Upgrades. <br />
+                            One-time or ongoing.
+                        </span>
+                    ),
+                },
+            ].map((item) => (
+                <div class="flex flex-col flex-1/3 items-center  text-center font-500 ">
+                    <div class="w-full flex justify-between">
+                        <div class="w-[1vw] h-[1vw] border-t-[#6E677D] border-l-[#6E677D] border-1 " />
+                        <div class="w-[1vw] h-[1vw] border-t-[#6E677D] border-r-[#6E677D] border-1 " />
+                    </div>
+                    <div class="py-[1vw]">
+                        <p class="text-[#6E677D] text-[1.4vw]">{item.name}</p>
+                        <p class="text-[#DCD2E2] text-[1vw]">{item.desc}</p>
+                    </div>
+                    <div class="w-full flex justify-between">
+                        <div class="w-[1vw] h-[1vw] border-b-[#6E677D] border-l-[#6E677D] border-1 " />
+                        <div class="w-[1vw] h-[1vw] border-b-[#6E677D] border-r-[#6E677D] border-1 " />
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</div>
