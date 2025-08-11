@@ -1,0 +1,47 @@
+---
+import Separator from "../Separator.astro";
+import GetInTouch from "./GetInTouch.astro";
+---
+
+<div class="relative cursor-none" id="block">
+    <div class="absolute z-10 w-full top-[10vw]">
+        <Separator />
+    </div>
+    <img
+        src="/src/assets/footer-bg.png"
+        class="absolute right-0 -z-10 h-[80vw] w-full"
+    />
+    <div
+        class="text-[#6E677D] absolute text-[1vw] top-[40vw] left-[1vw] space-y-[0.5vw]"
+    >
+        <p>You know what you need</p>
+        <p>We know how to build it</p>
+    </div>
+
+    <div
+        class="text-[#6E677D] absolute text-[1vw] top-[76vw] left-[1vw] space-y-[0.5vw]"
+    >
+        <p>© 2025 null.face . All rights reserved.</p>
+    </div>
+
+    <div class="absolute z-50 right-0 top-[50vw] item overflow-hidden">
+        <GetInTouch />
+    </div>
+</div>
+
+<style>
+    .item {
+        transition: 0s linear;
+    }
+</style>
+
+<script>
+    var item = document.querySelector(".item");
+    var block = document.getElementById("block");
+
+    block.onmousemove = function (e) {
+        item.style.position = "absolute";
+        item.style.left = e.clientX + -20 + "px";
+        item.style.top = e.clientY + -20 + "px";
+    };
+</script>
