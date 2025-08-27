@@ -1,5 +1,5 @@
 ---
-import LiquidGlassCard from "./LiquidGlassCard.astro";
+import LiquidGlassCard from "../LiquidGlassCard.astro";
 import Chevron from "@assets/chevron.svg";
 
 const items = [
@@ -13,66 +13,130 @@ const items = [
 ];
 ---
 
-<div class="w-full relative overflow-hidden bg-black">
-    <p
-        class="opacity-40 absolute z-50 text-[1.1vw] text-white w-full text-center top-[6%]"
-    >
-        null.face
-    </p>
+<div>
+    <div class="w-full relative overflow-hidden bg-black">
+        <p
+            class="opacity-40 absolute text-[18px] z-50 lg:text-[1.1vw] text-white w-full text-center top-[6%]"
+        >
+            null.face
+        </p>
 
-    <div class="relative w-full">
-        <img src="/src/assets/person-header.png" class="w-full relative z-0" />
+        <div class="relative w-full h-[600px] lg:h-fit">
+            <img
+                src="/src/assets/person-header.png"
+                class="w-full relative z-0 lg:block hidden"
+            />
+
+            <img
+                src="/src/assets/person-header-mobile.png"
+                class="min-w-[1024px] absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:hidden block"
+            />
+
+            <div
+                class="fade-in absolute left-0 right-0 top-[220px] lg:top-1/4 -translate-y-1/2 lg:inline-flex hidden
+                   flex-nowrap overflow-hidden z-10"
+            >
+                <div id="scrolling-text" class="flex font-[600]">
+                    <p
+                        class="text-main-white uppercase whitespace-nowrap text-[28px] lg:text-[5vw] mr-8"
+                    >
+                        Move in silence Deploy at scale Move in silence Deploy
+                        at scale
+                    </p>
+                    <p
+                        class="text-main-white uppercase whitespace-nowrap text-[28px] lg:text-[5vw] mr-8"
+                    >
+                        Move in silence Deploy at scale Move in silence Deploy
+                        at scale
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="fade-in absolute left-0 right-0 top-[220px] lg:top-1/4 -translate-y-1/2 lg:hidden
+               flex-nowrap overflow-hidden inline-flex z-10"
+            >
+                <div class="flex font-[600] marquee enable-animation">
+                    <p
+                        class="text-main-white uppercase whitespace-nowrap text-[28px] lg:text-[5vw] marquee__content"
+                    >
+                        Move in silence Deploy at scale Move in silence Deploy
+                        at scale
+                    </p>
+                    <p
+                        class="text-main-white uppercase whitespace-nowrap text-[28px] lg:text-[5vw] marquee__content"
+                    >
+                        Move in silence Deploy at scale Move in silence Deploy
+                        at scale
+                    </p>
+                </div>
+            </div>
+
+            <img
+                src="/src/assets/person-without-bg.png"
+                class="w-full absolute z-20 -top-[30.5%] -left-[2.4%] -rotate-[4.7deg] fade-in-without-move lg:block hidden"
+            />
+            <img
+                src="/src/assets/person-without-bg.png"
+                class="min-w-[1024px] absolute z-20 top-1/2 left-1/2 transform -translate-x-[532px] -translate-y-1/2 -rotate-[5deg] lg:hidden block"
+            />
+        </div>
+
+        <section
+            class="absolute z-50 left-0 top-[75%] w-full overflow-hidden lg:block hidden"
+        >
+            <div class="flex justify-center">
+                <div
+                    id="scrolling-cards"
+                    class="flex gap-4 marquee-container"
+                    style="will-change: transform;"
+                >
+                    {
+                        Array(5)
+                            .fill(null)
+                            .map(() => (
+                                <div class="card-copy inline-flex gap-4">
+                                    {items.map((item) => (
+                                        <LiquidGlassCard label={item} />
+                                    ))}
+                                </div>
+                            ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="absolute z-50 left-0 top-[75%] w-full overflow-hidden lg:hidden block"
+        >
+            <div class="flex justify-center">
+                <div class="marquee enable-animation-reverse">
+                    <ul class="marquee__content">
+                        {items.map((item) => <LiquidGlassCard label={item} />)}
+                    </ul>
+
+                    <ul class="marquee__content" aria-hidden="true">
+                        {items.map((item) => <LiquidGlassCard label={item} />)}
+                    </ul>
+                </div>
+            </div>
+        </section>
 
         <div
-            class="fade-in absolute left-0 right-0 top-1/4 -translate-y-1/2
-               flex-nowrap overflow-hidden inline-flex z-10"
+            class="fade-in hidden lg:block absolute z-50 text-[1vw] text-[#6E677D] opacity-40 w-full text-center bottom-[4%]"
         >
-            <div id="scrolling-text" class="flex font-[600]">
-                <p
-                    class="text-main-white uppercase whitespace-nowrap text-[5vw] mr-8"
-                >
-                    Move in silence Deploy at scale Move in silence Deploy at
-                    scale
-                </p>
-                <p
-                    class="text-main-white uppercase whitespace-nowrap text-[5vw] mr-8"
-                >
-                    Move in silence Deploy at scale Move in silence Deploy at
-                    scale
-                </p>
+            <p>
+                A senior dev team with 6+ years <br />of experience in crypto,
+                Web3, and AI
+            </p>
+            <div class="text-center flex justify-center mt-4">
+                <Chevron />
             </div>
         </div>
-
-        <img
-            src="/src/assets/person-without-bg.png"
-            class="w-full absolute z-20 -top-[30.5%] -left-[2.4%] -rotate-[4.7deg] fade-in-without-move"
-        />
     </div>
 
-    <section class="absolute z-50 left-0 top-[75%] w-full overflow-hidden">
-        <div class="flex justify-center">
-            <div
-                id="scrolling-cards"
-                class="flex gap-4"
-                style="will-change: transform;"
-            >
-                {
-                    Array(5)
-                        .fill(null)
-                        .map(() => (
-                            <span class="card-copy inline-flex gap-4">
-                                {items.map((item) => (
-                                    <LiquidGlassCard label={item} />
-                                ))}
-                            </span>
-                        ))
-                }
-            </div>
-        </div>
-    </section>
-
     <div
-        class="fade-in absolute z-50 text-[1vw] text-[#6E677D] opacity-40 w-full text-center bottom-[4%]"
+        class="fade-in z-50 text-[14px] text-[#6E677D] opacity-40 w-full text-center mt-6 block lg:hidden"
     >
         <p>
             A senior dev team with 6+ years <br />of experience in crypto, Web3,
@@ -95,10 +159,41 @@ const items = [
     .card-copy {
         flex: none;
     }
+    .marquee {
+        --gap: 1rem;
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+        gap: var(--gap);
+    }
 
-    .liquid-glass-card {
-        contain: layout style paint;
-        backface-visibility: hidden;
+    .marquee--reverse .marquee__content {
+        animation-direction: reverse;
+    }
+
+    .marquee__content {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        min-width: 100%;
+        gap: var(--gap);
+    }
+
+    .enable-animation .marquee__content {
+        animation: scroll 10s linear infinite;
+    }
+
+    .enable-animation-reverse .marquee__content {
+        animation: scroll 10s linear infinite reverse;
+    }
+
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - var(--gap)));
+        }
     }
 </style>
 
