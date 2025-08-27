@@ -1,6 +1,6 @@
 ---
-import LiquidGlassCard from "../LiquidGlassCard.astro";
 import Chevron from "@assets/chevron.svg";
+import LiquidGlassCard from "./LiquidGlassCard.astro";
 
 const items = [
     "MVP for hackathon",
@@ -23,12 +23,12 @@ const items = [
 
         <div class="relative w-full h-[600px] lg:h-fit">
             <img
-                src="/src/assets/person-header.png"
+                src="./src/assets/person-header.png"
                 class="w-full relative z-0 lg:block hidden"
             />
 
             <img
-                src="/src/assets/person-header-mobile.png"
+                src="./src/assets/person-header-mobile.png"
                 class="min-w-[1024px] absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:hidden block"
             />
 
@@ -73,11 +73,11 @@ const items = [
             </div>
 
             <img
-                src="/src/assets/person-without-bg.png"
+                src="./src/assets/person-without-bg.png"
                 class="w-full absolute z-20 -top-[30.5%] -left-[2.4%] -rotate-[4.7deg] fade-in-without-move lg:block hidden"
             />
             <img
-                src="/src/assets/person-without-bg.png"
+                src="./src/assets/person-without-bg.png"
                 class="min-w-[1024px] absolute z-20 top-1/2 left-1/2 transform -translate-x-[532px] -translate-y-1/2 -rotate-[5deg] lg:hidden block"
             />
         </div>
