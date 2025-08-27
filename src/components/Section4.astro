@@ -6,7 +6,7 @@
             const imgNumber = index + 1;
             const imgUrl = `/src/assets/section3/${imgNumber}.png`;
             return (
-                <div class="flex items-center justify-center w-full h-full border-[0.5px] border-[#423E4B]">
+                <div class="flex items-center justify-center w-full h-full border-[0.5px] border-[#423E4B] fade-in">
                     <img
                         src={imgUrl}
                         alt={`Image ${imgNumber}`}
@@ -17,3 +17,26 @@
         })
     }
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 1,
+                rootMargin: "0px 0px 0px 0px",
+            },
+        );
+
+        document
+            .querySelectorAll(".fade-in, .scale-in , .fade-in-without-move")
+            .forEach((el) => observer.observe(el));
+    });
+</script>

@@ -7,7 +7,7 @@
     <div
         class="absolute left-[3%] opacity-60 right-[1%] top-1/2 transform -translate-y-1/2"
     >
-        <div class="h-[0.1vw] bg-[#6E677D] w-[98%]"></div>
+        <div class="h-[0.1vw] bg-[#6E677D] w-[98%] grow-line"></div>
     </div>
 
     <div class="relative flex items-center justify-center ml-10 w-[1%] h-[1vw]">
@@ -15,3 +15,54 @@
         <div class="w-full h-[8%] bg-[#6E677D] rotate-90 absolute"></div>
     </div>
 </div>
+
+<style>
+    .grow-line {
+        width: 0;
+        opacity: 0.6;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .grow-line.animate {
+        animation: growLine 1s ease-out forwards;
+    }
+
+    @keyframes growLine {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 98%;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+
+                        const line = entry.target.querySelector(".grow-line");
+                        if (line) {
+                            line.classList.add("animate");
+                        }
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px",
+            },
+        );
+
+        document
+            .querySelectorAll(".fade-in, .scale-in, .fade-in-without-move")
+            .forEach((el) => observer.observe(el));
+    });
+</script>

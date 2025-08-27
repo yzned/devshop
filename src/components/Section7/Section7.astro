@@ -9,7 +9,7 @@ import GetInTouch from "./GetInTouch.astro";
     </div>
     <img
         src="/src/assets/footer-bg.png"
-        class="absolute right-0 -z-10 h-[80vw] w-full"
+        class="absolute right-0 -z-10 h-[80vw] w-full fade-in-without-move"
     />
     <div
         class="text-[#6E677D] absolute text-[1vw] top-[40vw] left-[1vw] space-y-[0.5vw]"
@@ -36,6 +36,33 @@ import GetInTouch from "./GetInTouch.astro";
 </style>
 
 <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+
+                        const line = entry.target.querySelector(".grow-line");
+                        if (line) {
+                            line.classList.add("animate");
+                        }
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                rootMargin: "0px 0px -100px 0px",
+            },
+        );
+
+        document
+            .querySelectorAll(".fade-in, .scale-in, .fade-in-without-move")
+            .forEach((el) => observer.observe(el));
+    });
+
     var item = document.querySelector(".item");
     var block = document.getElementById("block");
 

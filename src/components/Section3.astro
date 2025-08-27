@@ -1,4 +1,4 @@
-<div class="w-full relative overflow-hidden = mt-[10vw]">
+<div class="w-full relative overflow-hidden mt-[10vw]">
     <div
         class="absolute inset-0 bg-center bg-cover bg-no-repeat z-0"
         style="background-image: url('/src/assets/bg-2.png');"
@@ -9,16 +9,107 @@
         class="relative z-10 h-[50vw] flex items-start pt-[16vw] justify-center"
     >
         <p
-            class="text-[#DCD2E2] text-[28vw] font-medium bg-red-950 leading-0 relative"
+            class="text-[#DCD2E2] text-[28vw] leading-0 relative fade-in-without-move font-[600]"
         >
             6
         </p>
 
         <div
-            class="text-[#DCD2E2] text-[3vw] uppercase text-center absolute z-10 mix-blend-difference right-[29.7%] top-[30%]"
+            class="text-[#DCD2E2] font-[600] fade-in text-[3vw] uppercase text-center absolute z-10 mix-blend-difference right-[29.7%] top-[30%]"
         >
             <p>years in crypto</p>
-            <p>Nothing we haven’t seen</p>
+            <p class="mr-[8.7vw]">
+                Nothing we haven't
+                <span
+                    id="changing-word"
+                    class="inline-block absolute ml-[0.8vw]"></span>
+            </p>
         </div>
     </div>
 </div>
+
+<style>
+    .cursor {
+        display: inline-block;
+        opacity: 1;
+        transform: translateY(-0.1em);
+        font-weight: normal;
+        color: #dcd2e2;
+        animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 1,
+                rootMargin: "0px 0px 0px 0px",
+            },
+        );
+
+        document
+            .querySelectorAll(".fade-in, .scale-in , .fade-in-without-move")
+            .forEach((el) => observer.observe(el));
+    });
+
+    const words = ["SEEN", "BUILT", "SCALED", "FIXED", "LAUNCHED"];
+    let currentWordIndex = 0;
+    const changingWordElement = document.getElementById("changing-word");
+    const cursorElement = document.getElementById("cursor");
+
+    const typingSpeed = 100;
+    const pauseAfterWord = 1500;
+    const erasingSpeed = 50;
+
+    function typeWord() {
+        const currentWord = words[currentWordIndex];
+        let charIndex = 0;
+
+        changingWordElement.textContent = "";
+
+        const typeInterval = setInterval(() => {
+            if (charIndex < currentWord.length) {
+                changingWordElement.textContent += currentWord[charIndex];
+
+                charIndex++;
+            } else {
+                clearInterval(typeInterval);
+                setTimeout(eraseWord, pauseAfterWord);
+            }
+        }, typingSpeed);
+
+        function eraseWord() {
+            const eraseInterval = setInterval(() => {
+                if (changingWordElement.textContent.length > 0) {
+                    changingWordElement.textContent =
+                        changingWordElement.textContent.slice(0, -1);
+                } else {
+                    clearInterval(eraseInterval);
+                    currentWordIndex = (currentWordIndex + 1) % words.length;
+                    setTimeout(typeWord, 200);
+                }
+            }, erasingSpeed);
+        }
+    }
+
+    typeWord();
+</script>

@@ -27,7 +27,7 @@ const items = [
             class="fade-in absolute left-0 right-0 top-1/4 -translate-y-1/2
                flex-nowrap overflow-hidden inline-flex z-10"
         >
-            <div id="scrolling-text" class="flex">
+            <div id="scrolling-text" class="flex font-[600]">
                 <p
                     class="text-main-white uppercase whitespace-nowrap text-[5vw] mr-8"
                 >
@@ -57,7 +57,7 @@ const items = [
                 style="will-change: transform;"
             >
                 {
-                    Array(3)
+                    Array(5)
                         .fill(null)
                         .map(() => (
                             <span class="card-copy inline-flex gap-4">
@@ -76,7 +76,7 @@ const items = [
     >
         <p>
             A senior dev team with 6+ years <br />of experience in crypto, Web3,
-            AI and
+            and AI
         </p>
         <div class="text-center flex justify-center mt-4">
             <Chevron />
@@ -207,7 +207,7 @@ const items = [
             cardsX += cardsSpeed * cardsDirection;
 
             if (cardsDirection < 0 && -cardsX >= cardsWidth) {
-                cardsX += cardsWidth; // Плавный переход
+                cardsX += cardsWidth;
             } else if (cardsDirection > 0 && cardsX >= 0) {
                 cardsX -= cardsWidth; // Плавный переход
             }
