@@ -2,12 +2,12 @@
 import LiquidGlassCard from "./LiquidGlassCard.astro";
 
 const items = [
-    "MVP for hackathon",
+    "Rapid MVP Development",
     "Product redesign",
-    "Wallet integration",
-    "NFT mint flow",
+    "Payment integration",
+    "Mobile Apps",
     "Full product development",
-    "DAO tools",
+    "Web3 Solutions",
     "AI integrations",
 ];
 ---
@@ -121,31 +121,55 @@ const items = [
             </div>
         </section>
 
-        <div
-            class="fade-in hidden lg:block absolute z-50 text-[1vw] text-[#6E677D] opacity-40 w-full text-center bottom-[4%]"
+        <button
+            type="button"
+            data-target="section-2"
+            class="fade-in cursor-pointer hidden lg:block absolute z-50 text-[1vw] text-[#6E677D] opacity-40 w-full text-center bottom-[4%]"
         >
             <p>
-                A senior dev team with 6+ years <br />of experience in crypto,
-                Web3, and AI
+                A senior dev team with 6+ years of experience<br />
+                in software engineering, AI solutions, and cutting-edge web technologies.
             </p>
             <div class="text-center flex justify-center mt-4">
-                <img src="/assets/chevron.svg" />
+                <img src="/assets/chevron.svg" alt="Scroll down" />
             </div>
-        </div>
+        </button>
     </div>
 
-    <div
-        class="fade-in z-50 text-[14px] text-[#6E677D] opacity-40 w-full text-center mt-6 block lg:hidden"
+    <button
+        type="button"
+        data-target="section-2"
+        id="section-2-mobile"
+        class="fade-in z-50 text-[14px] text-[#6E677D] opacity-40 w-full text-center mt-6 block lg:hidden cursor-pointer"
     >
         <p>
-            A senior dev team with 6+ years <br />of experience in crypto, Web3,
-            and AI
+            A senior dev team with 6+ years <br /> in software engineering, AI solutions,
+            and cutting-edge web technologies.
         </p>
         <div class="text-center flex justify-center mt-4">
             <img src="/assets/chevron.svg" />
         </div>
-    </div>
+    </button>
 </div>
+
+<script>
+    // Универсальный обработчик для всех кнопок с data-target
+    document.querySelectorAll("button[data-target]").forEach((button) => {
+        button.addEventListener("click", () => {
+            const targetId = button.getAttribute("data-target");
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            } else {
+                console.warn(`[Scroll] Элемент с id="${targetId}" не найден`);
+            }
+        });
+    });
+</script>
 
 <style>
     #scrolling-cards,

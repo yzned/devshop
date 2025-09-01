@@ -1,23 +1,97 @@
-<div class="px-[2vw] flex flex-col overflow-x-hidden">
-    <header class="relative flex w-full mb-[6vw] fade-in">
-        <p class="uppercase text-[3vw] text-[#DCD2E2] z-10 font-[600]">
+<div class="px-4 lg:px-[2vw] flex flex-col overflow-x-hidden relative">
+    <header class="relative hidden lg:flex w-full lg:mb-[6vw] fade-in">
+        <p
+            class="uppercase text-[3vw] text-[#DCD2E2] z-10 font-[600] lg:block hidden"
+        >
             our services
         </p>
 
         <img
-            src="/src/assets/lights.png"
+            src="/assets/lights.png"
             class="w-full absolute z-0 -right-[22%] top-[50%]"
         />
     </header>
-    <div class="font-500 space-y-[6vw]">
+    <div class="lg:hidden block">
+        <img
+            src="/assets/lights.png"
+            class="min-w-[790px] fade-in max-w-[790px] lg:min-w-full lg:max-w-full lg:w-full absolute z-0 -left-[218px] lg:-left-0 lg:-right-[22%] lg:top-[50%]"
+        />
+
+        <div class="mt-[80px]">
+            <div class="relative z-10">
+                <p
+                    class="uppercase text-[24px] text-[#DCD2E2] z-10 font-[600] fade-in"
+                >
+                    our services
+                </p>
+            </div>
+
+            <p
+                class="text-[20px] text-[#DCD2E2] z-10 font-[600] mt-10 mb-3 fade-in"
+            >
+                Development
+            </p>
+
+            <div class="relative z-10">
+                {
+                    [
+                        "MVP in 14 Days",
+                        "DeFi Platform Development",
+                        "NFT Marketplace & Token Launch",
+                        "DAO Governance Platform",
+                        "Gamified Onboarding & Web3 Bots",
+                        "AI + Web3 Integrations",
+                        "Zero-Knowledge Privacy Systems",
+                        "Custom SaaS Development",
+                        "Admin Panels & CMS Systems",
+                        "AI-Powered Web Tools",
+                        "E-commerce Storefront",
+                        "Corporate Website",
+                        "Marketing Landing Page",
+                    ].map((item) => (
+                        <div class="text-[14px] py-2 text-[#DCD2E2] border-b border-[#6E677D99] last:border-b-0 fade-in">
+                            {item}
+                        </div>
+                    ))
+                }
+            </div>
+
+            <p
+                class="text-[20px] text-[#DCD2E2] z-10 font-[600] mt-10 mb-3 fade-in"
+            >
+                Audit
+            </p>
+
+            <div class="relative z-10">
+                {
+                    [
+                        "Smart Contract Security Audit",
+                        "Web3 Code Quality Audit",
+                        "UX Audit for Web3 Apps",
+                        "Conversion UX Review",
+                        "Design System Health Check",
+                        "Fullstack Code Quality Audit",
+                    ].map((item) => (
+                        <div class="text-[14px] py-2 text-[#DCD2E2] border-b border-[#6E677D99] last:border-b-0 fade-in">
+                            {item}
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="font-500 space-y-[6vw] lg:block hidden">
         <div class="flex w-full">
             <div class="text-[#DCD2E2] text-[1.5vw] w-[52%] fade-in font-[600]">
                 Development
             </div>
             <div class="space-y-[6vw]">
                 <div class="relative z-10 space-y-[2vw]">
-                    <p class="text-[#6E677D] text-[1.5vw] fade-in">Web3</p>
-                    <div class="flex space-x-[2.5vw]">
+                    <p class="text-[#6E677D] text-[1.5vw] fade-in font-[500]">
+                        General
+                    </p>
+                    <div class="flex space-x-[7.6vw]">
                         <div class="space-y-[2vw] fade-in">
                             {
                                 [
@@ -26,19 +100,21 @@
                                         desc: "Rapid full-cycle product launch",
                                     },
                                     {
-                                        name: "NFT Marketplace & Token Launch",
-                                        desc: "Platform for minting and selling NFTs",
+                                        name: "Mobile Development",
+                                        desc: "Native and cross-platform apps.",
                                     },
                                     {
-                                        name: "Gamified Onboarding & Web3 Bots",
-                                        desc: "Quests, XP and crypto bots",
-                                    },
-                                    {
-                                        name: "Zero-Knowledge Privacy Systems",
-                                        desc: "ZK-based onboarding and private access",
+                                        name: "Maintenance & Scaling",
+                                        desc: (
+                                            <span>
+                                                Continuous support and feature
+                                                <br />
+                                                development.
+                                            </span>
+                                        ),
                                     },
                                 ].map((item) => (
-                                    <div class="text-[1vw]">
+                                    <div class="text-[1vw] space-y-[0.5vw] h-[5vw]">
                                         <p class="text-[#DCD2E2]">
                                             {item.name}
                                         </p>
@@ -53,20 +129,33 @@
                             {
                                 [
                                     {
-                                        name: "DeFi Platform Development",
-                                        desc: "Decentralized financial services",
+                                        name: "UI/UX Design",
+                                        desc: (
+                                            <span>
+                                                {" "}
+                                                Intuitive interfaces and
+                                                seamless user
+                                                <br /> experiences.
+                                            </span>
+                                        ),
                                     },
 
                                     {
-                                        name: "DAO Governance Platform",
-                                        desc: "Tools for decentralized  management",
+                                        name: "Backend & API",
+                                        desc: (
+                                            <span>
+                                                Robust architecture,
+                                                integrations, and <br />{" "}
+                                                optimized server solutions.
+                                            </span>
+                                        ),
                                     },
                                     {
-                                        name: "AI + Web3 Integrations",
-                                        desc: "AI-powered decentralized applications",
+                                        name: "AI Integrations",
+                                        desc: "Add AI to any system or product",
                                     },
                                 ].map((item) => (
-                                    <div class="text-[1vw] fade-in">
+                                    <div class="text-[1vw] space-y-[0.5vw] fade-in h-[5vw]">
                                         <p class="text-[#DCD2E2]">
                                             {item.name}
                                         </p>
@@ -81,8 +170,10 @@
                 </div>
 
                 <div class="relative z-10 space-y-[2vw]">
-                    <p class="text-[#6E677D] text-[1.5vw] fade-in">General</p>
-                    <div class="flex space-x-[2.5vw]">
+                    <p class="text-[#6E677D] text-[1.5vw] fade-in font-[500]">
+                        Web3
+                    </p>
+                    <div class="flex space-x-[5vw]">
                         <div class="space-y-[2vw]">
                             {
                                 [
@@ -99,7 +190,7 @@
                                         desc: "Structured brand presence website",
                                     },
                                 ].map((item) => (
-                                    <div class="text-[1vw] fade-in">
+                                    <div class="text-[1vw] fade-in space-y-[0.5vw]">
                                         <p class="text-[#DCD2E2]">
                                             {item.name}
                                         </p>
@@ -127,7 +218,7 @@
                                         desc: "Promo landing with animation & layout",
                                     },
                                 ].map((item) => (
-                                    <div class="text-[1vw] fade-in">
+                                    <div class="text-[1vw] fade-in space-y-[0.5vw]">
                                         <p class="text-[#DCD2E2]">
                                             {item.name}
                                         </p>
@@ -146,23 +237,37 @@
             <div class="text-[#DCD2E2] text-[1.5vw] w-[52%] fade-in font-[600]">
                 Audit
             </div>
-            <div class="space-y-[6vw]">
+
+            <div class="flex flex-col space-y-[6vw]">
                 <div class="relative z-10 space-y-[2vw]">
-                    <p class="text-[#6E677D] text-[1.5vw] fade-in">Web3</p>
+                    <p class="text-[#6E677D] text-[1.5vw] fade-in font-[500]">
+                        General
+                    </p>
                     <div class="flex space-x-[2.5vw]">
-                        <div class="space-y-[2vw]">
+                        <div class="space-y-[2vw] fade-in">
                             {
                                 [
                                     {
-                                        name: "Smart Contract Security Audit",
-                                        desc: "Vulnerability check for smart contracts",
+                                        name: "Code audits",
+                                        desc: (
+                                            <span>
+                                                In-depth review to ensure
+                                                quality, security,
+                                                <br /> and performance
+                                            </span>
+                                        ),
                                     },
                                     {
-                                        name: "UX Audit for Web3 Apps",
-                                        desc: "User experience audit for crypto apps",
+                                        name: "Product Audits",
+                                        desc: (
+                                            <span>
+                                                Full analysis of architecture,
+                                                UX, and <br /> scalability{" "}
+                                            </span>
+                                        ),
                                     },
                                 ].map((item) => (
-                                    <div class="text-[1vw] fade-in">
+                                    <div class="text-[1vw] space-y-[0.5vw] h-[5vw]">
                                         <p class="text-[#DCD2E2]">
                                             {item.name}
                                         </p>
@@ -177,11 +282,28 @@
                             {
                                 [
                                     {
-                                        name: "Web3 Code Quality Audit",
-                                        desc: "Logic and modularity code review",
+                                        name: "Technical Audits",
+                                        desc: (
+                                            <span>
+                                                Identify bottlenecks and
+                                                optimize your <br />
+                                                system
+                                            </span>
+                                        ),
+                                    },
+
+                                    {
+                                        name: "Security Audits",
+                                        desc: (
+                                            <span>
+                                                Protect your app with thorough
+                                                vulnerability
+                                                <br /> checks
+                                            </span>
+                                        ),
                                     },
                                 ].map((item) => (
-                                    <div class="text-[1vw] fade-in">
+                                    <div class="text-[1vw] space-y-[0.5vw] fade-in h-[5vw]">
                                         <p class="text-[#DCD2E2]">
                                             {item.name}
                                         </p>
@@ -191,6 +313,59 @@
                                     </div>
                                 ))
                             }
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-[6vw]">
+                    <div class="relative z-10 space-y-[2vw]">
+                        <p
+                            class="text-[#6E677D] text-[1.5vw] font-[500] fade-in"
+                        >
+                            Web3
+                        </p>
+                        <div class="flex space-x-[4.2vw]">
+                            <div class="space-y-[2vw]">
+                                {
+                                    [
+                                        {
+                                            name: "Smart Contract Security Audit",
+                                            desc: "Vulnerability check for smart contracts",
+                                        },
+                                        {
+                                            name: "UX Audit for Web3 Apps",
+                                            desc: "User experience audit for crypto apps",
+                                        },
+                                    ].map((item) => (
+                                        <div class="text-[1vw] fade-in">
+                                            <p class="text-[#DCD2E2]">
+                                                {item.name}
+                                            </p>
+                                            <p class="text-[#6E677D]">
+                                                {item.desc}
+                                            </p>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                            <div class="space-y-[2vw]">
+                                {
+                                    [
+                                        {
+                                            name: "Web3 Code Quality Audit",
+                                            desc: "Logic and modularity code review",
+                                        },
+                                    ].map((item) => (
+                                        <div class="text-[1vw] fade-in">
+                                            <p class="text-[#DCD2E2]">
+                                                {item.name}
+                                            </p>
+                                            <p class="text-[#6E677D]">
+                                                {item.desc}
+                                            </p>
+                                        </div>
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

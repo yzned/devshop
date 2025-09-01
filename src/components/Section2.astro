@@ -2,20 +2,20 @@
 import Separator from "./Separator.astro";
 ---
 
-<div class="w-screen pt-[10%] flex flex-col">
+<div class="w-screen pt-[10%] flex flex-col" id="section-2">
     <Separator />
     <div
         class="px-4 py-12 space-y-[48px] flex-col lg:flex-row lg:px-[2vw] lg:h-[40vw] lg:w-[70vw] lg:pt-[5%] lg:pb-[8%] flex lg:space-x-[16vw]"
     >
-        <div class="h-full space-y-4 flex flex-col justify-between fade-in">
+        <div class="h-full space-y-4 flex flex-col justify-between">
             <p
-                class="uppercase text-[24px] lg:text-[3vw] text-[#DCD2E2] font-[600]"
+                class="uppercase text-[24px] lg:text-[3vw] text-[#DCD2E2] font-[600] fade-in"
             >
                 superpowers
             </p>
 
-            <p class="text-[14px] lg:text-[1vw] text-[#6E677D]">
-                We don’t follow the market. <br />We fix it for 6 years
+            <p class="text-[14px] lg:text-[1vw] text-[#6E677D] fade-in">
+                6 years of experience, <br /> countless solutions delivered
             </p>
         </div>
 
@@ -26,33 +26,37 @@ import Separator from "./Separator.astro";
                 {
                     [
                         "Product design",
-                        " UX research",
-                        " Web3 UX",
+                        "UX research",
+                        "User Experience Design",
                         " 3D design",
-                        "Frontend (React/Next)",
+                        "Frontend Development",
                         " Backend APIs",
-                        " Smart contracts",
-                        "Wallet integration",
+                        " Web3 Solutions",
+                        "Payment & Wallet Integration",
                         " DevOps",
                         " CI/CD pipelines",
-                    ].map((item) => <div class="fade-in">{item}</div>)
+                    ].map((item) => (
+                        <div class="fade-in whitespace-nowrap">{item}</div>
+                    ))
                 }
             </div>
 
             <div class="text-[#6E677D] space-y-4 lg:space-y-[0.7vw]">
                 {
                     [
-                        " Web3 protocols",
-                        "Token utilities",
-                        "DAO logic",
+                        "System Architecture",
+                        "Business Logic Development",
+                        "Workflow Automation",
                         "AI integration",
                         "Dashboard systems",
                         "API architecture",
                         "System scaling",
-                        "Performance tuning",
+                        "Performance Optimization",
                         "QA & testing",
                         "Design-to-code",
-                    ].map((item) => <div class="fade-in">{item}</div>)
+                    ].map((item) => (
+                        <div class="fade-in whitespace-nowrap">{item}</div>
+                    ))
                 }
             </div>
         </div>
