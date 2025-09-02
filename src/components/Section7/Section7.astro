@@ -4,46 +4,53 @@ import GetInTouch from "./GetInTouch.astro";
 ---
 
 <div class="relative cursor-none" id="block">
-    <div class="absolute z-10 w-full top-[10vw]">
-        <Separator />
-    </div>
+    <a
+        href="https://t.me/FrostyBirdy"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cursor-none"
+    >
+        <div class="absolute z-10 w-full top-[10vw]">
+            <Separator />
+        </div>
 
-    <div
-        class="absolute inset-0 bg-no-repeat z-0 block lg:hidden min-w-[964px] h-[764px] -left-[700px]"
-        style="
+        <div
+            class="absolute inset-0 bg-no-repeat z-0 block lg:hidden min-w-[964px] h-[764px] -left-[700px]"
+            style="
             background-image: url('/assets/footer-bg.png');
             background-size: cover;
             background-position: center;
         "
-    >
-    </div>
+        >
+        </div>
 
-    <img
-        src="/assets/footer-bg.png"
-        class="absolute right-0 -z-10 h-[80vw] w-full fade-in-without-move hidden lg:block"
-    />
-    <div
-        class="text-[#6E677D] absolute text-[14px] -bottom-[200px] left-[16px] lg:text-[1vw] lg:top-[40vw] lg:left-[1vw] lg:space-y-[0.5vw]"
-    >
-        <p>You know what you need</p>
-        <p>We know how to build it</p>
-    </div>
+        <img
+            src="/assets/footer-bg.png"
+            class="absolute right-0 -z-10 h-[80vw] w-full fade-in-without-move hidden lg:block"
+        />
+        <div
+            class="text-[#6E677D] absolute text-[14px] -bottom-[200px] left-[16px] lg:text-[1vw] lg:top-[40vw] lg:left-[1vw] lg:space-y-[0.5vw]"
+        >
+            <p>You know what you need</p>
+            <p>We know how to build it</p>
+        </div>
 
-    <div
-        class="text-[#6E677D] -bottom-[750px] left-[16px] absolute text-[14px] lg:text-[1vw] lg:top-[76vw] lg:left-[1vw] lg:space-y-[0.5vw]"
-    >
-        <p>© 2025 null.face . All rights reserved.</p>
-    </div>
+        <div
+            class="text-[#6E677D] -bottom-[750px] left-[16px] absolute text-[14px] lg:text-[1vw] lg:top-[76vw] lg:left-[1vw] lg:space-y-[0.5vw]"
+        >
+            <p>© 2025 null.face . All rights reserved.</p>
+        </div>
 
-    <div class="absolute top-[400px] left-[24px] fade-in block lg:hidden">
-        <GetInTouch />
-    </div>
+        <div class="absolute top-[400px] left-[24px] fade-in block lg:hidden">
+            <GetInTouch />
+        </div>
 
-    <div
-        class="absolute z-50 right-0 top-[50vw] item overflow-hidden hidden lg:block"
-    >
-        <GetInTouch />
-    </div>
+        <div
+            class="absolute z-50 right-0 top-[50vw] item overflow-hidden hidden lg:block"
+        >
+            <GetInTouch />
+        </div>
+    </a>
 </div>
 
 <style>

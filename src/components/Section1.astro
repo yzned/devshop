@@ -1,7 +1,5 @@
 ---
 import LiquidGlassCard from "./LiquidGlassCard.astro";
-import Telegram from "/assets/telegram.svg";
-import Letter from "/assets/letter.svg";
 
 const items = [
     "Rapid MVP Development",
@@ -126,22 +124,28 @@ const items = [
             <div
                 class="text-center justify-center gap-[2vw] bottom-[22%] cursor-pointer fade-in absolute w-full z-[1000] hidden lg:flex"
             >
-                <div
+                <a
+                    href="https://t.me/FrostyBirdy"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="w-[2vw] h-[2vw] bg-white hover:bg-[#A732E5] transition-all mask mask-squircle"
                     style="
-                    mask-image: url('/assets/telegram.svg');
-                    -webkit-mask-image: url('/assets/telegram.svg');
-                    mask-repeat: no-repeat;
-                    -webkit-mask-repeat: no-repeat;
-                    mask-position: center;
-                    -webkit-mask-position: center;
-                    mask-size: contain;
-                    -webkit-mask-size: contain;
-                  "
+                mask-image: url('/assets/telegram.svg');
+                -webkit-mask-image: url('/assets/telegram.svg');
+                mask-repeat: no-repeat;
+                -webkit-mask-repeat: no-repeat;
+                mask-position: center;
+                -webkit-mask-position: center;
+                mask-size: contain;
+                -webkit-mask-size: contain;
+            "
                 >
-                </div>
+                </a>
 
-                <div
+                <a
+                    href="mailto:frostybirdyworks@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="w-[2vw] h-[2vw] bg-white hover:bg-[#A732E5] transition-all mask mask-squircle"
                     style="
                     mask-image: url('/assets/letter.svg');
@@ -154,7 +158,7 @@ const items = [
                     -webkit-mask-size: contain;
                   "
                 >
-                </div>
+                </a>
             </div>
         </div>
         <button
