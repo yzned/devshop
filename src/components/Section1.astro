@@ -1,5 +1,7 @@
 ---
 import LiquidGlassCard from "./LiquidGlassCard.astro";
+import Telegram from "/assets/telegram.svg";
+import Letter from "/assets/letter.svg";
 
 const items = [
     "Rapid MVP Development",
@@ -13,7 +15,7 @@ const items = [
 ---
 
 <div>
-    <div class="w-full relative overflow-hidden bg-black">
+    <div class="w-full relative overflow-hidden bg-black pb-[10%]">
         <p
             class="opacity-40 absolute text-[18px] z-50 lg:text-[1.1vw] text-white w-full text-center top-[6%]"
         >
@@ -82,7 +84,7 @@ const items = [
         </div>
 
         <section
-            class="absolute z-50 left-0 top-[75%] w-full overflow-hidden lg:block hidden"
+            class="absolute z-50 left-0 top-[65%] w-full overflow-hidden lg:block hidden"
         >
             <div class="flex justify-center">
                 <div
@@ -106,7 +108,7 @@ const items = [
         </section>
 
         <section
-            class="absolute z-50 left-0 top-[75%] w-full overflow-hidden lg:hidden block"
+            class="absolute z-50 left-0 top-[65%] w-full overflow-hidden lg:hidden block"
         >
             <div class="flex justify-center">
                 <div class="marquee enable-animation-reverse">
@@ -120,11 +122,45 @@ const items = [
                 </div>
             </div>
         </section>
+        <div>
+            <div
+                class="text-center justify-center gap-[2vw] bottom-[22%] cursor-pointer fade-in absolute w-full z-[1000] hidden lg:flex"
+            >
+                <div
+                    class="w-[2vw] h-[2vw] bg-white hover:bg-[#A732E5] transition-all mask mask-squircle"
+                    style="
+                    mask-image: url('/assets/telegram.svg');
+                    -webkit-mask-image: url('/assets/telegram.svg');
+                    mask-repeat: no-repeat;
+                    -webkit-mask-repeat: no-repeat;
+                    mask-position: center;
+                    -webkit-mask-position: center;
+                    mask-size: contain;
+                    -webkit-mask-size: contain;
+                  "
+                >
+                </div>
 
+                <div
+                    class="w-[2vw] h-[2vw] bg-white hover:bg-[#A732E5] transition-all mask mask-squircle"
+                    style="
+                    mask-image: url('/assets/letter.svg');
+                    -webkit-mask-image: url('/assets/letter.svg');
+                    mask-repeat: no-repeat;
+                    -webkit-mask-repeat: no-repeat;
+                    mask-position: center;
+                    -webkit-mask-position: center;
+                    mask-size: contain;
+                    -webkit-mask-size: contain;
+                  "
+                >
+                </div>
+            </div>
+        </div>
         <button
             type="button"
             data-target="section-2"
-            class="fade-in cursor-pointer hidden lg:block absolute z-50 text-[1vw] text-[#6E677D] opacity-40 w-full text-center bottom-[4%]"
+            class="fade-in cursor-pointer hidden lg:block absolute z-50 text-[1vw] text-[#6E677D] opacity-40 w-full text-center bottom-[10%]"
         >
             <p>
                 A senior dev team with 6+ years of experience<br />
@@ -136,24 +172,59 @@ const items = [
         </button>
     </div>
 
-    <button
-        type="button"
-        data-target="section-2"
-        id="section-2-mobile"
-        class="fade-in z-50 text-[14px] text-[#6E677D] opacity-40 w-full text-center mt-6 block lg:hidden cursor-pointer"
-    >
-        <p>
-            A senior dev team with 6+ years <br /> in software engineering, AI solutions,
-            and cutting-edge web technologies.
-        </p>
-        <div class="text-center flex justify-center mt-4">
-            <img src="/assets/chevron.svg" />
+    <div class="block lg:hidden -mt-[140px] relative z-[1000]">
+        <div
+            class="text-center flex justify-center gap-6 cursor-pointer fade-in w-full z-[1000]"
+        >
+            <div
+                class="w-[24px] h-[24px] bg-white hover:bg-[#A732E5] transition-all mask mask-squircle"
+                style="
+            mask-image: url('/assets/telegram.svg');
+            -webkit-mask-image: url('/assets/telegram.svg');
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            mask-position: center;
+            -webkit-mask-position: center;
+            mask-size: contain;
+            -webkit-mask-size: contain;
+          "
+            >
+            </div>
+
+            <div
+                class="w-[24px] h-[24px] bg-white hover:bg-[#A732E5] transition-all mask mask-squircle"
+                style="
+            mask-image: url('/assets/letter.svg');
+            -webkit-mask-image: url('/assets/letter.svg');
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            mask-position: center;
+            -webkit-mask-position: center;
+            mask-size: contain;
+            -webkit-mask-size: contain;
+          "
+            >
+            </div>
         </div>
-    </button>
+
+        <button
+            type="button"
+            data-target="section-2"
+            id="section-2-mobile"
+            class="fade-in z-50 text-[14px] text-[#6E677D] opacity-40 w-full text-center cursor-pointer px-6"
+        >
+            <p>
+                A senior dev team with 6+ years <br /> in software engineering, AI
+                solutions, and cutting-edge web technologies.
+            </p>
+            <div class="text-center flex justify-center mt-4">
+                <img src="/assets/chevron.svg" />
+            </div>
+        </button>
+    </div>
 </div>
 
 <script>
-    // Универсальный обработчик для всех кнопок с data-target
     document.querySelectorAll("button[data-target]").forEach((button) => {
         button.addEventListener("click", () => {
             const targetId = button.getAttribute("data-target");
